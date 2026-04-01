@@ -1,0 +1,27 @@
+[package]
+name = "peer-pressure"
+version = "0.1.0"
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+repository.workspace = true
+documentation = "https://docs.rs/peer-pressure"
+description = "Stupidly simple validation library"
+readme = "README.md"
+keywords = ["validation", "parse", "no-std", "newtype", "invariants"]
+categories = ["rust-patterns", "no-std", "no-std::no-alloc"]
+
+[dependencies]
+peer-pressure-derive = { workspace = true, optional = true }
+
+[dev-dependencies]
+futures = { workspace = true }
+
+[features]
+default = []
+derive = ["dep:peer-pressure-derive"]
+async = []
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]

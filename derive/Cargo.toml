@@ -1,0 +1,30 @@
+[package]
+name = "peer-pressure-derive"
+version = "0.1.0"
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+repository.workspace = true
+documentation = "https://docs.rs/peer-pressure-derive"
+description = "Stupidly simple derivations for a stupidly simple validation library"
+readme = "README.md"
+keywords = ["validation", "derive", "macro", "no-std", "invariants"]
+categories = [
+    "rust-patterns",
+    "no-std",
+    "development-tools::procedural-macro-helpers",
+]
+
+[lib]
+proc-macro = true
+
+[dependencies]
+syn = { version = "2.0.117", default-features = false, features = [
+    "derive",
+    "parsing",
+    "printing",
+    "proc-macro",
+] }
+quote = "1.0.45"
+proc-macro2 = "1.0.106"
+proc-macro-crate = "3.5"
