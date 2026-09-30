@@ -1,22 +1,27 @@
 # peer-pressure
 
+[![Crates.io Version](https://img.shields.io/crates/v/peer-pressure)](https://crates.io/crates/peer-pressure)
+[![docs.rs](https://img.shields.io/docsrs/peer-pressure)](https://docs.rs/peer-pressure)
+[![CI](https://github.com/monotonic-tech/peer-pressure/actions/workflows/ci.yml/badge.svg)](https://github.com/monotonic-tech/peer-pressure/actions/workflows/ci.yml)
+
 <img src="https://raw.githubusercontent.com/monotonic-tech/peer-pressure/main/gossips.jpeg"
      alt="A cropped fragment of the 1948 painting 'The Gossips', by Norman Rockwell, containing a chain of gossipping people. It's a deep metaphor."/>
 
-Peer pressure is a stupidly simple parse-don't-validation micro-framework for Rust types that seek to conform to society's expectations. You know, rules like these:
+Peer pressure is a stupidly simple [parse-don't-validation](https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/) micro-framework
+for Rust types that seek to conform to society's expectations. You know, rules like these:
 
 - A file name must not contain a `/` slash,
 - The number of items in cart must be non-negative,
 - Password must contain exactly 3 emojis, a prime number, your mother's maiden name in reverse, and cannot include any letter found in the word "password",
 
-..yada yada yada - `peer-pressure` gives you a small, cohesive set of traits and types to define your validation logic in a principled way.
+..yada yada yada - `peer-pressure` gives you a small, cohesive set of traits to define your validation logic in a principled way.
 
 ## Principles
 
 This crate is highly opinionated and deliberately constraining in accordance with the following beliefs:
 
 0. Validation should happen at system boundary and no constructed value should still need to be validated.
-   [In a perfect world, this crate would not have to exist](https://www.youtube.com/watch?v=Kl3H4vMqYNo).
+   [In a perfect world, this crate would not exist](https://www.youtube.com/watch?v=Kl3H4vMqYNo).
 1. Validation should be functionally pure
 2. Validation should consume the validated value
 3. Validity should be expressed at the type level
